@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import TextExample from './Card';
 
 const EventComponent = () => {
   const [message, setMessage] = useState('No mexcxzcssfage yet.');
@@ -18,13 +19,7 @@ const EventComponent = () => {
     return () => eventSource.close();
   }, [])
   
-  return (
-    <div>
-      <h2>{message.entity}</h2>
-      <p>{message.cause} {message.value}</p>
-      <p>{message.date}</p>
-    </div>
-  );
+  return (<TextExample title={message.entity} subtitle={message.cause} content={message.value} />);
 }
 
 export default EventComponent;
