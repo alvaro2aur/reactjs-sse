@@ -1,0 +1,18 @@
+services:
+  app:
+    # image: node:lts-buster-slim
+    container_name: app
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000'
+  server:
+    container_name: server
+    build: .
+    command: node server.js
+    volumes:
+      - .:/server/server.js
+    ports:
+      - '3001:3001'
